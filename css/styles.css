@@ -298,16 +298,30 @@ justify-content: space-between;
 
 /* SERVICES | WHAT WE DO | CZYM SIĘ ZAJMUJEMY -Main Page */
 
-.services {
-
-}
-
 .services-list {
   display: flex;
   justify-content: space-between;
 }
 
+.services-list-item {
+  position: relative;
+}
 
+.image-label {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 27px 90px;
+  background-color: var(--services-bg);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.142;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--third-color);
+}
 
 /* END SERVICES | WHAT WE DO | CZYM SIĘ ZAJMUJEMY -Main Page */
 
