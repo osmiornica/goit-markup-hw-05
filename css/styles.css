@@ -11,6 +11,10 @@
   --cards-border-color: #eeeeee; /* BORDER CARDS */
   --social-icon: #afb1b8; /* SOCIAL */
   --footer-social-icon: rgba(255, 255, 255, 0.1); /* SOCIAL FOOTER */
+
+  --services-bg: rgba(47, 48, 58, 0.8);
+  --overlay-color: rgba(33, 150, 243, 0.9);
+  --backdrop: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -133,10 +137,6 @@ img {
   color: var(--logo-color);
 }
 
-.logo-footer {
-  color: var(--third-color);
-}
-
 .span-logo {
   color: var(--secondary-color);
 }
@@ -160,6 +160,25 @@ img {
 
 .navigation-link {
   color: var(--main-color);
+}
+
+.navigation-item {
+  position: relative;
+}
+
+.navigation-item .active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--secondary-color);
+}
+
+.active {
+  color: var(--secondary-color);
 }
 
 .header-phone,
@@ -186,6 +205,9 @@ img {
 .header-email:focus,
 .header-phone:focus {
   color: var(--secondary-color);
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 /* END HEADER | KONIEC NAGŁÓWEK -Main Page */
@@ -225,7 +247,7 @@ img {
 
 /* SEKCJA LOREM | ADVANTAGES -Main Page */
 
-.about-stample {
+.about-stample { 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,6 +306,8 @@ justify-content: space-between;
   display: flex;
   justify-content: space-between;
 }
+
+
 
 /* END SERVICES | WHAT WE DO | CZYM SIĘ ZAJMUJEMY -Main Page */
 
@@ -555,3 +579,48 @@ justify-content: space-between;
 }
 
 /* END FOOTER */
+
+/* ===== BACKDROP ===== */
+
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop);
+  opacity: 1;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--third-color);
+  transform: translate(-50%, -50%);
+}
+
+.close-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--third-color);
+  cursor: pointer;
+}
+.is-hidden{
+opacity:0;
+visibility:0;
+pointer-events: none;
+}
+
+/* ===== END BACKDROP ===== */
